@@ -23,7 +23,8 @@ class PostsController extends Controller
      */
     public function create()
     {
-        return '[' . __METHOD__ . '] ' . 'respond a create form';
+        // return '[' . __METHOD__ . '] ' . 'respond a create form';
+        return view('posts.create');
     }
 
     /**
@@ -34,6 +35,7 @@ class PostsController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate(\App\Post::$rules);
         return '[' . __METHOD__ . '] ' . 'validate the form data from the create form and create a new instance';
     }
 
